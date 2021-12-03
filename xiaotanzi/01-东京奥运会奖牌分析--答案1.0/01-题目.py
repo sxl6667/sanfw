@@ -84,7 +84,7 @@ np2 = df2['国家'].value_counts()
 注意：仅统计单人项目
 """
 np3 = df2['运动员'].value_counts()
-# print(np3.head(5))
+# print(np3)
 
 
 # 第九题
