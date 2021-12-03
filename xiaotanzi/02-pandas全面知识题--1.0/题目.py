@@ -7,6 +7,8 @@ pd.set_option('display.max_columns', None)
 plot.rc('font', family='Microsoft YaHei')
 
 
+# 知识点可在 https://note.youdao.com/s/6juL6I5Z 中查看（如果想自己百度也行）
+
 # 第一大题——数据读取
 def read():
     pass
