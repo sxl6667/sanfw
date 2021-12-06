@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+这是母版 {{ msg }}
+{% block name %}
+{% endblock %}
+<br>
+<a href="#" class="{{ class }}" id="col">这个母版底部</a>
+<script src="{% static 'shop/js/jquery-1.12.4.min.js' %}"></script>
+
+<script>
+    $('#col').click(function (){
+        let data = {
+            'name': 'sss'
+        }
+        console.log("{% url 'hello' %}")
+
+
+        $.ajax({
+            url: "{% url 'hello' %}",
+            type: 'POST',
+            data: data,
+            success: function (data) {
+                data = JSON.parse(data);
+                if(data['status'] === 1) {
+                    console.log(data)
+                    document.getElementById('col').classList.add(data['data']['class'])
+                } else {
+                    console.log(data)
+                }
+            }
+        })
+    })
+</script>
+</body>
+
+</html>
